@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design System Premium */
+
+@layer base {
+  :root {
+    /* 🎨 BRAND */
+    --primary: 4 73% 38%;            /* Rojo #a61e2d */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 226 31% 23%;        /* Azul #29334e */
+    --secondary-foreground: 0 0% 100%;
+
+    /* 🧱 BASE */
+    --background: 0 0% 100%;
+    --foreground: 226 31% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 226 31% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 226 31% 18%;
+
+    /* ⚙️ UI */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 220 14% 96%;
+    --accent-foreground: 226 31% 18%;
+
+    --destructive: 4 73% 38%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 4 73% 38%;
+
+    --radius: 0.4rem;
+
+    /* Sidebar (no crítico pero consistente) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 226 15% 30%;
+    --sidebar-primary: 226 31% 23%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 226 31% 18%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 4 73% 38%;
+
+    /* Typography */
+    --font-sans: 'Open Sans', sans-serif;
+  }
+
+  .dark {
+    --background: 226 31% 12%;
+    --foreground: 0 0% 100%;
+
+    --card: 226 31% 14%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 226 31% 14%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 226 31% 18%;
+
+    --secondary: 226 31% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 226 20% 22%;
+    --muted-foreground: 220 10% 70%;
+
+    --accent: 226 20% 22%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 4 60% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 226 20% 22%;
+    --input: 226 20% 22%;
+    --ring: 4 73% 38%;
+
+    --sidebar-background: 226 31% 14%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 4 73% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 226 20% 22%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 226 20% 22%;
+    --sidebar-ring: 4 73% 38%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-gray-900;
+    font-family: var(--font-sans);
+  }
+}
+
+/* 🧩 COMPONENTES PREMIUM */
+
+@layer components {
+
+  /* Botón principal */
+  .btn-brand {
+    background: hsl(var(--primary));
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    border-radius: 2px;
+    border: none;
+    transition: all 0.25s ease;
+  }
+
+  .btn-brand:hover {
+    background: hsl(4 73% 30%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px hsl(var(--primary) / 0.3);
+  }
+
+  /* Cards premium */
+  .card-premium {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px hsl(226 31% 23% / 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .card-premium:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px hsl(226 31% 23% / 0.12);
+  }
+
+  /* Etiqueta de sección (tipo EY) */
+  .section-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: hsl(var(--primary));
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: hsl(var(--primary));
+  }
+}
+/* 🔥 GLOBAL LAYOUT SYSTEM (FIX PRINCIPAL) */
+
+@layer base {
+  section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* 🔥 TYPOGRAPHY SYSTEM (UNIFICA TODO) */
+
+@layer base {
+  h1 {
+    font-size: 48px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+  }
+
+  h2 {
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: hsl(var(--muted-foreground));
+    max-width: 600px;
+  }
+}
+/* 🔥 VISUAL UNIFICATION SYSTEM */
+
+@layer base {
+
+  body {
+    background: #ffffff;
+    color: #1a1a1a;
+  }
+
+  section {
+    background: #ffffff;
+  }
+
+  section:nth-child(even) {
+    background: #f8f9fb;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #111;
+  }
+
+  p {
+    color: #555;
+  }
+}
+
+/* 🔥 ELIMINA LOOK "LANDING AGRESIVA" */
+
+@layer components {
+
+  .btn-brand {
+    background: transparent;
+    color: hsl(var(--primary));
+    border: 1px solid hsl(var(--primary));
+    border-radius: 6px;
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+
+  .btn-brand:hover {
+    background: hsl(var(--primary));
+    color: #fff;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* 🔥 UNIFICA CARDS */
+
+@layer components {
+
+  .card-premium {
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    box-shadow: none;
+    padding: 24px;
+  }
+
+  .card-premium:hover {
+    transform: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  }
+}
+
+/* 🔥 CONTENIDO MÁS LIMPIO */
+
+@layer base {
+
+  h2 {
+    margin-bottom: 12px;
+  }
+
+  p {
+    margin-bottom: 16px;
+  }
+}
+/* 🔥 BACKGROUND SYSTEM (USANDO #d3d3d3 PERO BIEN APLICADO) */
+
+@layer base {
+
+  body {
+    background: #ffffff;
+  }
+
+  section {
+    background: #ffffff;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  /* Alternancia visual para unificar */
+  section:nth-of-type(even) {
+    background: #d3d3d3;
+  }
+}
+
+/* 🔥 AJUSTES PARA QUE EL GRIS NO SE VEA BARATO */
+
+@layer base {
+
+  h1, h2, h3 {
+    color: #111;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    color: #444;
+  }
+}
+
+/* 🔥 CARDS SOBRE FONDO GRIS */
+
+@layer components {
+
+  .card-premium {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  }
+}
+
+/* 🔥 BOTONES MÁS LIMPIOS (COHERENTES CON EL NUEVO FONDO) */
+
+@layer components {
+
+  .btn-brand {
+    background: hsl(var(--primary));
+    color: #fff;
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 0.85rem;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  .btn-brand:hover {
+    opacity: 0.9;
+    transform: none;
+    box-shadow: none;
+  }
+}
+/* 🔥 DIVIDERS ENTRE SECCIONES (LOOK PREMIUM SUTIL) */
+
+@layer base {
+
+  section {
+    position: relative;
+  }
+
+  /* Línea sutil entre secciones */
+  section + section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.06);
+  }
+}
+/* 🔥 FIX CONTRASTE EN CARDS */
+
+.card-premium {
+  background: #ffffff;
+  color: #111;
+}
+
+.card-premium p {
+  color: #333;
+}
+
+.card-premium strong {
+  color: #000;
+}
+/* 🔥 SCROLL FADE SYSTEM */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
