@@ -41,10 +41,14 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-red-700 hover:bg-red-800 text-white px-8 h-14 rounded-none font-bold tracking-wide transition-all duration-300 group">
-                CONOCERLOS +
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
+              {/* CTA Actualizado con enlace a /nosotros */}
+              <a href="/nosotros" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full bg-red-700 hover:bg-red-800 text-white px-8 h-14 rounded-none font-bold tracking-wide transition-all duration-300 group">
+                  CONOCERLOS +
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </a>
+              
               <Button size="lg" variant="outline" className="border-white/20 text-gray hover:bg-gray/5 px-8 h-14 rounded-none font-bold tracking-wide backdrop-blur-sm">
                 <Play className="mr-2 h-4 w-4 fill-current" />
                 VER PORTAFOLIO
