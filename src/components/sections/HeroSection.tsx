@@ -1,93 +1,58 @@
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const Hero = () => {
+const HeroSection = () => {
   return (
-    <div className="relative w-full bg-[#1a2333]">
-      {/* EFECTO DE DESPLAZAMIENTO SUAVE:
-          Este contenedor usa 'sticky' y una máscara de desvanecimiento dinámica.
-          Al bajar, el contenido parece disolverse en el aire.
-      */}
-      <div 
-        className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden"
-        style={{
-          perspective: "1000px",
-          WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 95%)',
-          maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 95%)',
-        }}
-      >
-        {/* Background Decor Animado */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-[10%] -right-[10%] w-[50%] h-[50%] bg-red-900/10 blur-[120px] rounded-full animate-pulse" />
-          <div className="absolute top-[20%] -left-[10%] w-[40%] h-[40%] bg-blue-900/10 blur-[120px] rounded-full animate-pulse" style={{ animationDelay: "2s" }} />
-        </div>
-
-        <div className="container mx-auto px-4 pt-32 pb-20 relative z-10 flex-grow flex flex-col justify-center">
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
-              </span>
-              <span className="text-xs font-medium text-slate-300 tracking-wider uppercase">Research & Consulting</span>
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter leading-[0.9]">
-              Potenciamos el <span className="text-red-700">Futuro</span> de la Investigación con <span className="italic font-light text-slate-400">Inteligencia Estratégica.</span>
-            </h1>
-            
-            <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl leading-relaxed font-light">
-              En ERAK, fusionamos consultorías de alto nivel con tecnología de vanguardia para diseñar ecosistemas de análisis cuanti-cualitativo que impulsan la gestión basada en evidencias.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              {/* CTA Actualizado con enlace a /nosotros */}
-              <a href="/nosotros" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full bg-red-700 hover:bg-red-800 text-white px-8 h-14 rounded-none font-bold tracking-wide transition-all duration-300 group">
-                  CONOCERLOS +
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </a>
-              
-              <Button size="lg" variant="outline" className="border-white/20 text-gray hover:bg-gray/5 px-8 h-14 rounded-none font-bold tracking-wide backdrop-blur-sm">
-                <Play className="mr-2 h-4 w-4 fill-current" />
-                VER PORTAFOLIO
-              </Button>
-            </div>
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-white">
+      {/* Elemento decorativo de fondo - Sutil y profesional */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50 -skew-x-12 translate-x-20 z-0 hidden lg:block" />
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-4xl">
+          <div className="inline-block px-3 py-1 mb-6 border border-slate-200 rounded-full animate-fade-in">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-slate-500">
+              Consultoría Estratégica
+            </span>
           </div>
-        </div>
-
-        {/* Marquee en Movimiento con Desvanecimiento Lateral */}
-        <div className="w-full relative z-20 pb-12 overflow-hidden">
-          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#1a2333] to-transparent z-30" />
-          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#1a2333] to-transparent z-30" />
           
-          <div className="flex whitespace-nowrap animate-marquee-infinite border-y border-white/5 py-8">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="flex items-center">
-                <span className="mx-16 text-[10px] font-bold tracking-[0.6em] text-white/20 uppercase">ESTRATEGIA</span>
-                <div className="h-1 w-1 rounded-full bg-red-800/50"></div>
-                <span className="mx-16 text-[10px] font-bold tracking-[0.6em] text-white/20 uppercase">INTELIGENCIA</span>
-                <div className="h-1 w-1 rounded-full bg-red-800/50"></div>
-                <span className="mx-16 text-[10px] font-bold tracking-[0.6em] text-white/20 uppercase">RESULTADOS</span>
-                <div className="h-1 w-1 rounded-full bg-red-800/50"></div>
-              </div>
-            ))}
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 tracking-tight text-slate-900 animate-fade-up">
+            INVESTIGACIÓN SOCIAL, <br />
+            <span className="text-red-700">DIAGNÓSTICO E IMPACTO.</span>
+          </h1>
+          
+          <p className="text-xl text-slate-600 mb-12 max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            Impulsamos el desarrollo a través de procesos profundos de análisis y gestión de proyectos con estándares internacionales.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+            {/* El botón principal con el enlace corregido */}
+            <a href="/nosotros" className="w-full sm:w-auto">
+              <Button 
+                size="lg" 
+                className="w-full bg-red-700 hover:bg-red-800 text-white px-10 h-14 rounded-none font-bold tracking-wide transition-all duration-300 group shadow-lg shadow-red-900/10"
+              >
+                CONOCERLOS +
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </a>
+            
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="w-full sm:w-auto border-slate-300 text-slate-700 px-10 h-14 rounded-none font-bold hover:bg-slate-50 transition-colors"
+            >
+              NUESTROS SERVICIOS
+            </Button>
           </div>
         </div>
       </div>
 
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes marquee-infinite {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee-infinite {
-          animation: marquee-infinite 50s linear infinite;
-        }
-      `}} />
-    </div>
+      {/* Indicador de scroll sutil */}
+      <div className="absolute bottom-10 left-6 animate-bounce hidden md:block">
+        <div className="w-px h-12 bg-slate-200 mx-auto" />
+      </div>
+    </section>
   );
 };
 
-export default Hero;
+export default HeroSection;
