@@ -11,7 +11,7 @@ const HeroSection = () => {
         <div className="max-w-4xl">
           <div className="inline-block px-3 py-1 mb-6 border border-slate-200 rounded-full animate-fade-in">
             <span className="text-xs font-bold tracking-[0.2em] uppercase text-slate-500">
-              Consultoría Estratégica.
+              Consultoría Estratégica
             </span>
           </div>
           
