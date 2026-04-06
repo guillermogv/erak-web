@@ -17,7 +17,7 @@ const HeroSection = () => {
           
           <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 tracking-tight text-slate-900 animate-fade-up">
             INVESTIGACIÓN SOCIAL, <br />
-            <span className="text-red-700">DIAGNÓSTICO E IMPACTO.</span>
+            <span className="text-red-700">DIAGNÓSTICO E IMPACTO</span>
           </h1>
           
           <p className="text-xl text-slate-600 mb-12 max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
