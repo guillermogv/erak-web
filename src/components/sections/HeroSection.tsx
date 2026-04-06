@@ -25,7 +25,7 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-            {/* El botón principal con el enlace corregido */}
+            {/* Botón vinculado a la página de Nosotros */}
             <a href="/nosotros" className="w-full sm:w-auto">
               <Button 
                 size="lg" 
@@ -36,13 +36,15 @@ const HeroSection = () => {
               </Button>
             </a>
             
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="w-full sm:w-auto border-slate-300 text-slate-700 px-10 h-14 rounded-none font-bold hover:bg-slate-50 transition-colors"
-            >
-              NUESTROS SERVICIOS
-            </Button>
+            <a href="#servicios" className="w-full sm:w-auto">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="w-full sm:w-auto border-slate-300 text-slate-700 px-10 h-14 rounded-none font-bold hover:bg-slate-50 transition-colors"
+              >
+                NUESTROS SERVICIOS
+              </Button>
+            </a>
           </div>
         </div>
       </div>
